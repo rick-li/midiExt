@@ -1,16 +1,20 @@
 {
     "manifest_version": 2,
-
     "name": "Duosuccess midi plugin",
-    "description": "Play midi in duosuccess page, without any extra plugins.",
+    "description": "Play duosuccess midi music without any extra plugins.",
     "version": "1.0",
 
+    "icons": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+    },
     "permissions": [
-        "<all_urls>"
+        "*://www.duosuccess.com/*"
     ],
 
     "content_scripts": [{
-        "matches": ["<all_urls>"],
+        "matches": ["*://www.duosuccess.com/*"],
         "js": ["./inc/jasmid/stream.js", "./inc/jasmid/midifile.js", "./inc/jasmid/replayer.js", "./js/MIDI/AudioDetect.js", "./js/MIDI/LoadPlugin.js", "./js/MIDI/Plugin.js", "./js/MIDI/Player.js", "./js/Window/DOMLoader.XMLHttp.js", "./js/promise-0.1.1.min.js", "./inc/Base64.js", "./inc/base64binary.js", "./soundfont/acoustic_grand_piano-ogg.js", "content.js"],
         "run_at": "document_idle"
     }]

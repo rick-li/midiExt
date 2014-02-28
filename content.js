@@ -4,7 +4,7 @@ var midifile = embed && embed.src;
 if (!midifile) {
     return false;
 }
-
+midifile = midifile + '?' + new Date().getTime();
 console.log('midifile is ', midifile);
 
 var player = MIDI.Player;
